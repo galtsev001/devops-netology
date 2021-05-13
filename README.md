@@ -1,5 +1,6 @@
 # My first repo from GitHub
 
+>Изменения в файле README сделаны в ветки fix
 ### Описание файла .gitignore в директории terraform
 #### 1. Git не будет следить за изменениями (фиксировать) следующие файлы
 + `crash.log`
