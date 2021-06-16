@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ## 2.4. Инструменты Git
+=======
+# Home work 2.4
+>>>>>>> Рефакторинг кода
 
 #### 1. Найдите полный хеш и комментарий коммита, хеш которого начинается на aefea
 > git log aefea -1 --pretty=oneline
@@ -55,4 +59,9 @@ dd01a35078f040ca984cdd349f18d0b67e486c35 Update CHANGELOG.md
 
 5ac311e2a91e381e2f52234668b49ba670aa0fe5 of Martin Atkins mart@degeneration.co.uk
 
+<<<<<<< HEAD
 >>Author: Sergey Galtsev
+=======
+>>Author: Sergey Galtsev
+> 
+>>>>>>> Рефакторинг кода
