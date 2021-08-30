@@ -20,6 +20,6 @@
 + [4.3. Языки разметки JSON и YAML](./4/4.3/README.md) `ON PROGRESS`
 
 #### Виртуализация
-+ [5.1. Основы виртуализации](./4/4.1/README.md) `ON PROGRESS`
-+ [5.2. Системы управления виртуализацией](./4/4.2/README.md) `ON PROGRESS`
-+ [5.3. Контейнеризация на примере Docker](./4/4.3/README.md) `ON PROGRESS`
++ [5.1. Основы виртуализации](./5/5.1/README.md) `ON PROGRESS`
++ [5.2. Системы управления виртуализацией](./5/5.2/README.md) `ON PROGRESS`
++ [5.3. Контейнеризация на примере Docker](./5/5.3/README.md) `ON PROGRESS`
