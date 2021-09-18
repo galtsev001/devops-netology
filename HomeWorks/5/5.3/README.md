@@ -89,3 +89,51 @@
 </html>
 ```
 + #### Опубликуйте созданный форк в своем репозитории и предоставьте ответ в виде ссылки на докерхаб-репо.
+
+**Ответ:**
+
++ Зарегистрировался на Docker Hub
++ Создал файл `index.html` с указанным содержимым и сохранил его по данному пути `E:\test`
++ Для тестов выбрал образ `bitnami/apache`
++ Запустил команду `docker run --name apache -v E:\test:/app -p 8080:8080 bitnami/apache:latest`
+
+<span style="display:block;text-align:center">![image#1 ](./img/1.png)</span>
+
++ Результат в браузере
+
+<span style="display:block;text-align:center">![image#1 ](./img/2.png)</span>
+
++ Делаем форк и пуш в репозиторий
+
+<span style="display:block;text-align:center">![image#1 ](./img/3.png)</span>
+
++ Ссылка на репозиторий https://hub.docker.com/repository/docker/galtsev001/galtsev001
+
+#### 3) Запустите первый контейнер из образа centos c любым тэгом в фоновом режиме, подключив папку info из текущей рабочей директории на хостовой машине в /share/info контейнера;
+#### Запустите второй контейнер из образа debian:latest в фоновом режиме, подключив папку info из текущей рабочей директории на хостовой машине в /info контейнера;
+#### Подключитесь к первому контейнеру с помощью exec и создайте текстовый файл любого содержания в /share/info ;
+#### Добавьте еще один файл в папку info на хостовой машине;
+#### Подключитесь во второй контейнер и отобразите листинг и содержание файлов в /info контейнера
+
+**Ответ**
+
++ Делаем pull centos & debian
+
+<span style="display:block;text-align:center">![image#1 ](./img/4.png)</span>
+
++ Запускаем первый контейнер Centos и Debian
+
+<span style="display:block;text-align:center">![image#1 ](./img/5.png)</span>
+
++ Подключаемся к Centos с помощью команды `exec`
+
+<span style="display:block;text-align:center">![image#1 ](./img/6.png)</span>
+
++ Добавляем файл на хостовой машине 
+
+<span style="display:block;text-align:center">![image#1 ](./img/7.png)</span>
+<span style="display:block;text-align:center">![image#1 ](./img/8.png)</span>
+
++ Подключитесь во второй контейнер и отобразите листинг и содержание файлов в /info контейнера
+
+<span style="display:block;text-align:center">![image#1 ](./img/9.png)</span>
