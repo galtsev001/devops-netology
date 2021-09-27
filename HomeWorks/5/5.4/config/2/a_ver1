@@ -1,0 +1,8 @@
+FROM amazoncorretto
+
+RUN yum install wget -y
+RUN wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+RUN amazon-linux-extras install epel -y
+RUN yum install java-11-amazon-corretto-devel.x86_64 jenkins update -y
+CMD ["/bin/bash"]

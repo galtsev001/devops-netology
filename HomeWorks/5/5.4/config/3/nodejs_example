@@ -1,0 +1,7 @@
+FROM node
+RUN apt-get update
+RUN git clone https://github.com/simplicitesoftware/nodejs-demo.git
+WORKDIR /nodejs-demo/
+RUN sed -i s/localhost/0.0.0.0/g app.js
+RUN npm install
+CMD npm start
