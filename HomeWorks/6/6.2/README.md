@@ -6,6 +6,16 @@
 ___
 **Ответ:**
 
+Структура проекта:
+```bash  
+  db - папка для файлов БД
+  docker-compose.yml - файл-инструкция для Docker
+```
++ Файл `docker-compose.yml`
+  + [docker-compose.yml](./config/docker-compose.yml)
++ Подключил `adminer` для удобного просмотра данных в БД
+  <span style="display:block;text-align:center">![image#1 ](./img/1.png)</span>
+
 ___
 ### Задача 2
 #### В БД из задачи 1:
@@ -31,6 +41,47 @@ ___
 + #### список пользователей с правами над таблицами test_db
 ___
 **Ответ:**
++ Проверяем списки контейнеров и подключаемся к `postgres`
+ 
+
+  <span style="display:block;text-align:center">![image#1 ](./img/2.png)</span>
++ Запускаем `psql` и проверяем список БД
+ 
+
+  <span style="display:block;text-align:center">![image#1 ](./img/3.png)</span>
++ Создаем `test-admin-user` и БД `test_db` + даем все права создаваемому пользователю
+ 
+
+  <span style="display:block;text-align:center">![image#1 ](./img/4.png)</span>
+  <span style="display:block;text-align:center">![image#1 ](./img/6.png)</span>
++ Создаем таблицы
+
+```html
+#Подключаемся к созданой базе данных
+\c test_db;
+
+#Создаем таблицу orders
+CREATE TABLE orders(
+	id	serial PRIMARY KEY,  
+	ordername	varchar(24) NOT NULL,  
+	price	integer NOT NULL  
+  );
+
+#Создаем таблицу clients	
+CREATE TABLE clients(
+	id	integer PRIMARY KEY,
+	lastname	varchar(24) NOT NULL,
+	country	varchar(24) NOT NULL,
+    	ord integer REFERENCES orders(id)
+  );
+```
++ Cоздаем пользователя `test-simple-user` и даем требуемые права на таблицы
+
+  <span style="display:block;text-align:center">![image#1 ](./img/5.png)</span>
+
++ Покажем всю статистику по созданной БД и пользователям
+
+  <span style="display:block;text-align:center">![image#1 ](./img/7.png)</span>
 
 ___
 ### Задача 3
