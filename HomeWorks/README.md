@@ -22,13 +22,14 @@
 #### Виртуализация
 + [5.1. Основы виртуализации](./5/5.1/README.md) `DONE`
 + [5.2. Системы управления виртуализацией](./5/5.2/README.md) `DONE`
-+ [5.3. Контейнеризация на примере Docker](./5/5.3/README.md) `ON CHECK`
-+ [5.4. Практические навыки работы с Docker](./5/5.4/README.md) `NEW`
++ [5.3. Контейнеризация на примере Docker](./5/5.3/README.md) `DONE`
++ [5.4. Практические навыки работы с Docker](./5/5.4/README.md) `DONE`
 
 #### Администрирование баз данных
-+ [6.1. Типы и структура СУБД](./6/6.1/README.md) `NEW`
-+ [6.2. SQL](./6/6.2/README.md) `NEW`
-+ [6.3. MySQL](./6/6.3/README.md) `ON PROCESS`
+
++ [6.1. Типы и структура СУБД](./6/6.1/README.md) `ON PROGRESS`
++ [6.2. SQL](./6/6.2/README.md) `ON PROGRESS`
++ [6.3. MySQL](./6/6.3/README.md) `DONE`
 + [6.4. PostgreSQL](./6/6.4/README.md) `NEW`
 + [6.5. Elasticsearch](./6/6.5/README.md) `NEW`
 + [6.6. Troubleshooting](./6/6.6/README.md) `NEW`
