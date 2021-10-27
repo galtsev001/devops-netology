@@ -32,6 +32,16 @@
 ___
 **Ответ:**
 
+Файлы для запуска elasticsearch находятся в [каталоге](./config)
+При первом запуске появилась ошибка:
+<span style="display:block;text-align:center">![image#1 ](./img/1.png)</span>
+Ссылка на Docker Hub
+https://hub.docker.com/layers/174356241/galtsev001/galtsev001/elastic/images/sha256-c5172a8f7de7b60a3ce4568cfa8467e1f5669be78bf1a736e93323cb143e19aa?context=repo
+```html
+docker pull galtsev001/galtsev001:elastic
+```
+<span style="display:block;text-align:center">![image#1 ](./img/2.png)</span>
+
 ___
 ### Задача 2
 В этом задании вы научитесь:
@@ -59,6 +69,14 @@ ind-3	2	4
 При проектировании кластера elasticsearch нужно корректно рассчитывать количество реплик и шард, иначе возможна потеря данных индексов, вплоть до полной, при деградации системы.
 ___
 **Ответ:**
+ + Создаем индексы  - 3 шт
+   <span style="display:block;text-align:center">![image#1 ](./img/3.png)</span>
+ + Получаем список индексов
+   <span style="display:block;text-align:center">![image#1 ](./img/4.png)</span>
+ + Статус yellow у индекса - обозначает что нода одна.
+   <span style="display:block;text-align:center">![image#1 ](./img/5.png)</span>
+ + Индексы удаляем командой
+   `curl -X DELETE "localhost:9200/_all?pretty"`
 
 ___
 ### Задача 3
