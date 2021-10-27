@@ -70,11 +70,17 @@ ind-3	2	4
 ___
 **Ответ:**
  + Создаем индексы  - 3 шт
+
    <span style="display:block;text-align:center">![image#1 ](./img/3.png)</span>
+
  + Получаем список индексов
+
    <span style="display:block;text-align:center">![image#1 ](./img/4.png)</span>
+
  + Статус yellow у индекса - обозначает что нода одна.
+
    <span style="display:block;text-align:center">![image#1 ](./img/5.png)</span>
+
  + Индексы удаляем командой
    `curl -X DELETE "localhost:9200/_all?pretty"`
 
@@ -97,7 +103,7 @@ ___
 
 Приведите в ответе список файлов в директории со snapshotами.
 
-Удалите индекс test и создайте индекс test-2. Приведите в ответе список индексов.
+Удалите индекс test, и создайте индекс test-2. Приведите в ответе список индексов.
 
 Восстановите состояние кластера elasticsearch из snapshot, созданного ранее.
 
