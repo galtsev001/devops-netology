@@ -115,4 +115,33 @@ ___
 ___
 **Ответ:**
 
++ регистрируем репозиторий для спапшотов
+  <span style="display:block;text-align:center">![image#1 ](./img/6.png)</span>
+
+
++ создание индекса и список индексов
+  <span style="display:block;text-align:center">![image#1 ](./img/7.png)</span>
+
+
++ создаем снапшот командой
+  curl -X PUT "localhost:9200/_snapshot/netology_backup/snapshot_cluster?wait_for_completion=true&pretty"
+  и выводим список файлов в каталоге со снапшотами
+  `docker exec -it elasticsearch ls -l /var/lib/elasticsearch/snapshots`
+  <span style="display:block;text-align:center">![image#1 ](./img/8.png)</span>
+
+
++ удаление индекса
+  curl -X DELETE "localhost:9200/test?pretty"
+  создание нового индекса и отображение списка индексов
+
+  <span style="display:block;text-align:center">![image#1 ](./img/9.png)</span>
+
++ восстановление индекса из снапшота
+  curl -X POST "localhost:9200/_snapshot/netology_backup/snapshot_cluster/_restore?pretty"
+  и список индексови список индексов
+
+  <span style="display:block;text-align:center">![image#1 ](./img/10.png)</span>
+
+
+
 ___
