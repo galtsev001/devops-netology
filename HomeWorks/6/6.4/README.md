@@ -53,11 +53,27 @@ __
 #### Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?
 ___
 **Ответ:**
-<span style="display:block;text-align:center">![image#1 ](./img/4.png)</span>
-***Можно ли было изначально исключить "ручное" разбиение при проектировании таблицы orders?***
-```html
-CREATE RULE order_with_price_more_than_499 AS ON INSERT TO orders WHERE (price > 499) DO INSTEAD INSERT INTO orders_1 VALUES (NEW.*);
-CREATE RULE order_with_price_less_than_499 AS ON INSERT TO orders WHERE (price <= 499) DO INSTEAD INSERT INTO orders_2 VALUES (NEW.*);
+
++ #### Создаем новую таблицу с использование дополнительной синтаксической конструкции в команде CREATE ТABLE – PATITION BY.
+```
+test_database=# CREATE TABLE orders_range (
+id INT,
+title varchar (80),
+price INT ) PARTITION BY RANGE(price);
+CREATE TABLE
+```
++ #### шардируем получившуюся таблицу
+```
+test_database=# CREATE TABLE orders_1 PARTITION OF orders_range FOR VALUES FROM  (499) TO (9999999);
+CREATE TABLE
+test_database=# CREATE TABLE orders_2 PARTITION OF orders_range FOR VALUES FROM  (0) TO (499);
+CREATE TABLE
+```
+
++ #### Вставляем содержимое таблиц orders в orders_range
+```
+test_database=# INSERT INTO orders_range SELECT * FROM orders;
+INSERT 0 8
 ```
 ___
 ### Задача 4
