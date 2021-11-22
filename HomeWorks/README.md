@@ -30,14 +30,14 @@
 + [6.1. Типы и структура СУБД](./6/6.1/README.md) `ON PROGRESS`
 + [6.2. SQL](./6/6.2/README.md) `DONE`
 + [6.3. MySQL](./6/6.3/README.md) `DONE`
-+ [6.4. PostgreSQL](./6/6.4/README.md) `ON CHECK`
-+ [6.5. Elasticsearch](./6/6.5/README.md) `ON CHECK`
-+ [6.6. Troubleshooting](./6/6.6/README.md) `ON PROGRESS`
++ [6.4. PostgreSQL](./6/6.4/README.md) `DONE`
++ [6.5. Elasticsearch](./6/6.5/README.md) `DONE`
++ [6.6. Troubleshooting](./6/6.6/README.md) `DONE`
 
 #### Облачная инфраструктура. Terraform.
 
-+ [7.1. Инфраструктура как код](./7/7.1/README.md) `ON PROGRESS`
-+ [7.2. Облачные провайдеры и синтаксис Терраформ](./7/7.2/README.md) `NEW`
++ [7.1. Инфраструктура как код](./7/7.1/README.md) `DONE`
++ [7.2. Облачные провайдеры и синтаксис Терраформ](./7/7.2/README.md) `ON CHECK`
 + [7.3. Основы и принцип работы Терраформ](./7/7.3/README.md) `NEW`
 + [7.4. Средства командной работы над инфраструктурой](./7/7.4/README.md) `NEW`
 + [7.5. Основы golang](./7/7.5/README.md) `NEW`
