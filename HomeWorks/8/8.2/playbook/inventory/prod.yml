@@ -1,0 +1,8 @@
+---
+all:
+  hosts:
+    pc_host1:
+      ansible_connection: ssh
+      ansible_host: 192.168.1.113
+      ansible_user: "{{ pc_host1_user }}"
+      ansible_ssh_pass: "{{ pc_host1_pass }}"
