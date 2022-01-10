@@ -23,11 +23,14 @@ ___
 **Ответ**
 
 + Подготовил стенд для выполнения задания как на рисунке ниже:
+
   ![img.png](./img/2.png)
 + Готовый playbook
 
   [PlayBook](./playbook/)
-+ Требуемые файлы для установки (нет репозитории - тяжелые :-) )
-  ![img.png](./img/3.png)
-+ 
++ Требуемые файлы для установки
 
+  ![img.png](./img/3.png)
++ Результат работы playbook ` ansible-playbook -i inventory/prod.yml site.yml --ask-become-pass --diff`
+
+  ![img.png](./img/4.png)

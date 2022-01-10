@@ -1,6 +1,6 @@
 ---
   - name: Install Java
-    hosts: all
+    hosts: pc_host1
     tasks:
       - name: Set facts for Java 11 vars
         set_fact:
@@ -14,6 +14,11 @@
         register: download_java_binaries
         until: download_java_binaries is succeeded
         tags: java
+      - name: Create folder java home
+        become: true
+        file:
+            path: "{{ java_home }}"
+            state: directory
       - name: Ensure installation dir exists
         become: true
         file:
@@ -40,25 +45,29 @@
           src: jdk.sh.j2
           dest: /etc/profile.d/jdk.sh
         tags: java
+        
   - name: Install Elasticsearch
-    hosts: elasticsearch
+    hosts: pc_host1
     tasks:
-      - name: Upload tar.gz Elasticsearch from remote URL
-        get_url:
-          url: "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{ elastic_version }}-linux-x86_64.tar.gz"
-          dest: "/tmp/elasticsearch-{{ elastic_version }}-linux-x86_64.tar.gz"
-          mode: 0755
-          timeout: 60
-          force: true
-        register: get_elastic
-        until: get_elastic is succeeded
+      - name: Copy package Elasticsearch
+        copy:
+          mode: 0644
+          src: "{{ elastic_package }}"
+          dest: "/tmp/{{ elastic_package }}"
+        register: copy_elastic
         tags: elastic
       - name: Create directrory for Elasticsearch
+        become: true
         file:
           mode: 0644
           state: directory
           path: "{{ elastic_home }}"
         tags: elastic
+      - name: Create folder for Elasticsearch
+        become: true
+        file:
+            path: "{{ elastic_home }}"
+            state: directory
       - name: Extract Elasticsearch in the installation directory
         become: true
         unarchive:
@@ -69,7 +78,6 @@
           extra_opts: [--strip-components=1]
           creates: "{{ elastic_home }}/bin/elasticsearch"
         tags:
-          - skip_ansible_lint
           - elastic
       - name: Set environment Elastic
         become: yes
@@ -78,9 +86,12 @@
           src: templates/elk.sh.j2
           dest: /etc/profile.d/elk.sh
         tags: elastic
+        
   - name: Install Kibana
     hosts: elasticsearch
     tasks:
+      - debug:
+            msg: "https://artifacts.elastic.co/downloads/kibana/kibana-{{ kibana_version }}-linux-x86_64.tar.gz"
       - name: Upload tar.gz Kibana from remote URL
         get_url:
           url: "https://artifacts.elastic.co/downloads/kibana/kibana-{{ kibana_version }}-linux-x86_64.tar.gz"
@@ -90,6 +101,7 @@
           force: true
         tags: kibana
       - name: Create dirrectory fo kibana
+        become: true
         file:
           mode: 0644
           state: directory

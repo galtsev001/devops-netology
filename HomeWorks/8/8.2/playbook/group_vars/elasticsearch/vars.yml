@@ -1,5 +1,5 @@
 ---
-  elastic_version: "7.10.1"
-  elastic_home: "/opt/elastic/{{ elastic_version }}"
   kibana_version: "7.12.0"
   kibana_home: "/opt/elastic/{{ kibana_version }}"
+  pc_host2_user: vagrant
+  pc_host2_pass: vagrant
