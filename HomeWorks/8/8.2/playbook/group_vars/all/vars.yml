@@ -3,6 +3,5 @@
   java_oracle_jdk_package: jdk-11.0.10.tar.gz
   pc_host1_user: vagrant
   pc_host1_pass: vagrant
-  elastic_version: "7.10.1"
-  elastic_package: elasticsearch-{{ elastic_version }}-linux-x86_64.tar.gz
-  elastic_home: "/opt/elastic/{{ elastic_version }}"
+  pc_host2_user: vagrant
+  pc_host2_pass: vagrant

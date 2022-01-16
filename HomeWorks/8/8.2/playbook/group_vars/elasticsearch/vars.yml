@@ -1,5 +1,4 @@
 ---
-  kibana_version: "7.12.0"
-  kibana_home: "/opt/elastic/{{ kibana_version }}"
-  pc_host2_user: vagrant
-  pc_host2_pass: vagrant
+  elastic_version: "7.10.1"
+  elastic_package: elasticsearch-{{ elastic_version }}-linux-x86_64.tar.gz
+  elastic_home: "/opt/elastic/{{ elastic_version }}"

@@ -1,5 +1,5 @@
 ---
-all:
+elasticsearch:
   hosts:
     pc_host1:
       ansible_connection: ssh
@@ -7,7 +7,7 @@ all:
       ansible_user: "{{ pc_host1_user }}"
       ansible_ssh_pass: "{{ pc_host1_pass }}"
       
-elasticsearch:
+kibana:
   hosts:
     pc_host2:
       ansible_connection: ssh

@@ -1,6 +1,6 @@
 ---
   - name: Install Java
-    hosts: pc_host1
+    hosts: elasticsearch
     tasks:
       - name: Set facts for Java 11 vars
         set_fact:
@@ -47,7 +47,7 @@
         tags: java
         
   - name: Install Elasticsearch
-    hosts: pc_host1
+    hosts: elasticsearch
     tasks:
       - name: Copy package Elasticsearch
         copy:
@@ -55,14 +55,14 @@
           src: "{{ elastic_package }}"
           dest: "/tmp/{{ elastic_package }}"
         register: copy_elastic
-        tags: elastic
+        tags: elasticsearch
       - name: Create directrory for Elasticsearch
         become: true
         file:
           mode: 0644
           state: directory
           path: "{{ elastic_home }}"
-        tags: elastic
+        tags: elasticsearch
       - name: Create folder for Elasticsearch
         become: true
         file:
@@ -88,7 +88,7 @@
         tags: elastic
         
   - name: Install Kibana
-    hosts: elasticsearch
+    hosts: kibana
     tasks:
       - debug:
             msg: "https://artifacts.elastic.co/downloads/kibana/kibana-{{ kibana_version }}-linux-x86_64.tar.gz"
