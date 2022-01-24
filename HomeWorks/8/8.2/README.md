@@ -34,3 +34,8 @@ ___
 + Результат работы playbook ` ansible-playbook -i inventory/prod.yml site.yml --ask-become-pass --diff`
 
   ![img.png](./img/4.png)
+
++ Вывод команды `ansible-lint`
+
+  ![img.png](./img/5.png)
+
