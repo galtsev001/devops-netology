@@ -1,6 +1,6 @@
 ---
   - name: Install Java
-    hosts: elasticsearch
+    hosts: all
     tasks:
       - name: Set facts for Java 11 vars
         set_fact:
@@ -36,7 +36,6 @@
           extra_opts: [--strip-components=1]
           creates: "{{ java_home }}/bin/java"
         tags:
-          - skip_ansible_lint
           - java
       - name: Export environment variables
         become: true
@@ -44,8 +43,7 @@
           mode: 0644
           src: jdk.sh.j2
           dest: /etc/profile.d/jdk.sh
-        tags: java
-        
+        tags: java    
   - name: Install Elasticsearch
     hosts: elasticsearch
     tasks:
@@ -78,15 +76,14 @@
           extra_opts: [--strip-components=1]
           creates: "{{ elastic_home }}/bin/elasticsearch"
         tags:
-          - elastic
+          - elasticsearch
       - name: Set environment Elastic
         become: yes
         template:
           mode: 0644
           src: templates/elk.sh.j2
           dest: /etc/profile.d/elk.sh
-        tags: elastic
-        
+        tags: elasticsearch 
   - name: Install Kibana
     hosts: kibana
     tasks:
@@ -116,7 +113,6 @@
           dest: "{{ kibana_home }}"
           creates: "{{ kibana_home }}/bin/kibana"
         tags:
-          - skip_ansible_lint
           - kibana
       - name: Set environment Kibana
         become: yes
@@ -124,4 +120,4 @@
           mode: 0644
           src: templates/kibana.sh.j2
           dest: /etc/profile.d/kibana.sh
-        tags: elastic
+        tags: elasticsearch
