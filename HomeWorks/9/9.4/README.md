@@ -39,3 +39,10 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
   ![img.png](./img/3.png)
 
++ Создаем агента
+
+  ![img.png](./img/4.png)
+
++ Вывод информации об агенте
+
+  ![img.png](./img/5.png)
