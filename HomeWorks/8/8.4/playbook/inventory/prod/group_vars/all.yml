@@ -1,0 +1,8 @@
+---
+elk_stack_version: "7.16.2"
+elasticsearch_version: "{{ elk_stack_version }}"
+kibana_version: "{{ elk_stack_version }}"
+filebeat_version: "{{ elk_stack_version }}"
+ip_elasticsearch: "51.250.67.60"
+ip_kibana: "51.250.64.28"
+ip_filebeat: "51.250.70.76"

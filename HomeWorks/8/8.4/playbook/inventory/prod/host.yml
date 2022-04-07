@@ -1,0 +1,21 @@
+---
+all:
+  hosts:
+    elasticsearch-vm:
+      ansible_host: "{{ ip_elasticsearch }}"
+    kibana-vm:
+      ansible_host: "{{ ip_kibana }}"
+    filebeat-vm:
+      ansible_host: "{{ ip_filebeat }}"
+  vars:
+    ansible_connection: ssh
+    ansible_user: galtsev001
+elasticsearch:
+  hosts:
+    elasticsearch-vm:
+kibana:
+  hosts:
+    kibana-vm:
+filebeat:
+  hosts:
+    filebeat-vm:
