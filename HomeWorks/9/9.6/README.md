@@ -198,4 +198,4 @@ deploy-job:
 
 + Результат выполнения 
 
-  ![img.png](./img/10ё.png)
+  ![img.png](./img/10.png)
