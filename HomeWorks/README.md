@@ -48,7 +48,7 @@
 + [8.1. Введение в Ansible](./8/8.1/README.md) `DONE`
 + [8.2. Работа с Playbook](./8/8.2/README.md) `DONE`
 + [8.3. Использование Yandex Cloud](./8/8.3/README.md) `DONE`
-+ [8.4. Работа с Roles](./8/8.4/README.md) `ON PROGRESS`
++ [8.4. Работа с Roles](./8/8.4/README.md) `DONE`
 + [8.5. Тестирование Roles](./8/8.5/README.md) `NEW`
 + [8.6. Создание собственных модулей](./8/8.6/README.md) `NEW`
 
@@ -59,7 +59,7 @@
 + [9.3. Процессы CI/CD](./9/9.3/README.md) `DONE`
 + [9.4. Jenkins](./9/9.4/README.md) `ON PROGRESS`
 + [9.5. TeamCity](./9/9.5/README.md) `NEW`
-+ [9.6. Gitlab](./9/9.6/README.md) `NEW`
++ [9.6. Gitlab](./9/9.6/README.md) `ON CHECK`
 
 #### Мониторинг и логи
 
