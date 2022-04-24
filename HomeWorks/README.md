@@ -49,7 +49,7 @@
 + [8.2. Работа с Playbook](./8/8.2/README.md) `DONE`
 + [8.3. Использование Yandex Cloud](./8/8.3/README.md) `DONE`
 + [8.4. Работа с Roles](./8/8.4/README.md) `DONE`
-+ [8.5. Тестирование Roles](./8/8.5/README.md) `NEW`
++ [8.5. Тестирование Roles](./8/8.5/README.md) `DONE`
 + [8.6. Создание собственных модулей](./8/8.6/README.md) `NEW`
 
 #### Непрерывная разработка и интеграция
@@ -59,14 +59,14 @@
 + [9.3. Процессы CI/CD](./9/9.3/README.md) `DONE`
 + [9.4. Jenkins](./9/9.4/README.md) `ON PROGRESS`
 + [9.5. TeamCity](./9/9.5/README.md) `NEW`
-+ [9.6. Gitlab](./9/9.6/README.md) `ON CHECK`
++ [9.6. Gitlab](./9/9.6/README.md) `DONE`
 
 #### Мониторинг и логи
 
 + [10.1. Зачем и что нужно мониторить](./10/10.1/README.md) `DONE`
 + [10.2. Системы для мониторинга](./10/10.2/README.md) `DONE`
 + [10.3. Средство визуализации Grafana](./10/10.3/README.md) `DONE`
-+ [10.4. Система сбора логов ELK](./10/10.4/README.md) `ON CHECK`
++ [10.4. Система сбора логов ELK](./10/10.4/README.md) `DONE`
 + [10.5. Система перехватчик-ошибок Sentry](./10/10.5/README.md) `DONE`
 + [10.6. Инцидент-менеджмент](./10/10.6/README.md) `DONE`
 
