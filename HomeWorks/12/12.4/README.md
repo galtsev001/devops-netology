@@ -76,9 +76,11 @@ container_manager: containerd
 + Установка из [мануала](https://github.com/aak74/kubernetes-for-beginners/tree/master/15-install/30-kubespray). Далее проверка работы
 
 `Установка`
+
 ![img.png](./img/3.png)
 
 `Проверка`
+
 ![img.png](./img/4.png)
 
  ___
