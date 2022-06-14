@@ -50,6 +50,58 @@ all:
 
 + Результат работы внутри пода app3 доступности app2 по 3000 порту
 
+#### ДОРАБОТКА 
+
++ Созданная политика запрещает внешний трафик до `app1`, при этом доступ внутри подов остается до данного ресурса.
++ Чтобы проверить работу политики, для начала удалим ее
+
+```yaml
+ sudo kubectl delete  networkpolicy test-network-policy
+```
++ Далее создадим `service` ля доступа из вне до `app1` для этого применим `new_policy.yaml`
+
+```yaml
+nano new_policy.yaml
+______________________________
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-test
+  labels:
+    app: app1
+spec:
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: app1
+  type: NodePort
+______________________________
+
+sudo kubectl create -f new_policy.yaml
+```
+
++ Проверим созданный сервис и его доступность
+
+![img.png](./img/4.png)
+
++ Доступ через браузер из вне
+
+![img.png](./img/5.png)
+
++ Применим политику и еще раз проверим доступ [netpolll.yaml](./config/netpool.yaml)
+
+```bash
+sudo kubectl create -f netpool.yaml
+```
+
++ Через браузер
+
+![img.png](./img/6.png)
+
++ Внутри соседних подов
+
 ![img.png](./img/3.png)
 ___
 #### Задание 2: изучить, что запущено по умолчанию
