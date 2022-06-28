@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-service
+  template:
+    metadata:
+      labels:
+        app: web-service
+    spec:
+      containers:
+      - image: galtsev001/backend:1.0
+        name: backend
+        ports:
+        - containerPort: 9000
+      - image: galtsev001/frontend:1.0
+        name: frontend
+        ports:
+        - containerPort: 80
