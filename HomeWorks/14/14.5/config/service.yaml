@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-service
+  namespace: network-policy-test
+spec:
+  type: ClusterIP
+  selector:
+    app: first-app
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: second-service
+  namespace: network-policy-test
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: second-app
+  type: ClusterIP

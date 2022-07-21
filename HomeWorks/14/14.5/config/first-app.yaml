@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-app
+  namespace: network-policy-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: first-app
+  template:
+    metadata:
+      labels:
+        app: first-app
+    spec:
+      containers:
+      - image: k8s.gcr.io/echoserver:1.4
+        name: hello-world
+        ports:
+        - containerPort: 8080
