@@ -60,3 +60,11 @@
 
 ### Проверка доступа
 
+#### Public VM
+
+![img.png](./img/8.png)
+
+
+#### Private VM
+
+![img.png](./img/9.png)

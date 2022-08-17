@@ -24,6 +24,6 @@ resource "yandex_compute_instance" "nat-instance" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
+    user-data = "${file("./meta.txt")}"
   }
 }
